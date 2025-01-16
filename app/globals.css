@@ -3,19 +3,70 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colores para el esquema claro */
+  --background: #f9fafb; /* Fondo suave y claro */
+  --foreground: #1f2937; /* Texto oscuro, fácil de leer */
+  --primary: #3b82f6; /* Azul brillante */
+  --secondary: #9333ea; /* Morado */
+  --accent: #10b981; /* Verde suave */
+  --neutral: #9ca3af; /* Gris claro */
+  --border: #e5e7eb; /* Color de bordes */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Colores para el esquema oscuro */
+    --background: #1f2937; /* Fondo oscuro */
+    --foreground: #e5e7eb; /* Texto claro */
+    --primary: #60a5fa; /* Azul más suave para el contraste en el oscuro */
+    --secondary: #a78bfa; /* Morado suave */
+    --accent: #6ee7b7; /* Verde brillante */
+    --neutral: #6b7280; /* Gris más oscuro */
+    --border: #374151; /* Borde oscuro */
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave entre esquemas */
+}
+
+/* Estilos personalizados adicionales */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+header, footer {
+  background-color: var(--neutral);
+}
+
+section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+}
+
+section h2 {
+  color: var(--primary);
 }
